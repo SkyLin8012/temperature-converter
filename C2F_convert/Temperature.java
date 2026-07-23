@@ -17,3 +17,10 @@ public class Temperature {
         return (fahrenheit - 32.0) * 5.0 / 9.0;
     }
 }
+//修改 Temperature.java，加入驗證：
+public static double celsiusToFahrenheit(double celsius) {
+    if (celsius < -273.15) {
+        throw new IllegalArgumentException("溫度不可低於絕對零度 (-273.15°C)");
+    }
+    return celsius * 9.0 / 5.0 + 32.0;
+}
